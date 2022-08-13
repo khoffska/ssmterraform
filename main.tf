@@ -132,10 +132,11 @@ resource "random_string" "random" {
 }
 resource "aws_s3_bucket" "patchinstaller" {
   bucket = "${var.company_name}-patchinstaller"
+  key = "PRD"
 
   tags = {
     Name        = "patchinstaller-${var.company_name}"
-    Environment = "PRD"
+    Environment = "PRD/aza"
   }
 }
 
